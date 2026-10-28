@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FAQ | Soft Claude</title>
+  <meta name="description" content="Answers to common questions about Soft Claude's services, pricing, support and how we work.">
+  <meta name="theme-color" content="#0A0E1A">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230A0E1A'/><text x='32' y='43' font-size='30' text-anchor='middle' fill='%232DD4BF' font-family='Georgia,serif' font-weight='700'>{ }</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+
+  <a href="#main" class="sr-only">Skip to content</a>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div class="loader" id="loader" role="status" aria-live="polite" aria-hidden="true">
+    <div class="loader__box">
+      <div class="loader__logo">
+        <span class="loader__mark" aria-hidden="true">{ }</span>
+        <span>Soft Claude</span>
+      </div>
+
+      <p class="loader__text">Please Wait...</p>
+      <div class="loader__bar" aria-hidden="true"></div>
+
+      <div class="loader__error">
+        <p>This is taking longer than expected. Please check your internet connection and try again.</p>
+        <div class="loader__actions">
+          <button type="button" class="loader__btn loader__btn--primary" id="loaderRetry">Retry</button>
+          <button type="button" class="loader__btn" id="loaderSkip">Continue anyway</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Soft Claude home">
+        <span class="logo__mark" aria-hidden="true">{ }</span>
+        <span>Soft Claude</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li><a href="index.html" class="main-nav__link">Home</a></li>
+          <li><a href="services.html" class="main-nav__link">Services</a></li>
+          <li><a href="projects.html" class="main-nav__link">Projects</a></li>
+          <li><a href="clients.html" class="main-nav__link">Clients</a></li>
+          <li><a href="about.html" class="main-nav__link">About</a></li>
+          <li><a href="faq.html" class="main-nav__link" aria-current="page">FAQ</a></li>
+          <li><a href="contact.html" class="main-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="btn btn--primary header-cta">Start a Project</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE MENU ===================== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="mobile-menu__link">Home</a>
+    <a href="services.html" class="mobile-menu__link">Services</a>
+    <a href="projects.html" class="mobile-menu__link">Projects</a>
+    <a href="clients.html" class="mobile-menu__link">Clients</a>
+    <a href="about.html" class="mobile-menu__link">About</a>
+    <a href="faq.html" class="mobile-menu__link" aria-current="page">FAQ</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+    <a href="contact.html" class="btn btn--primary mobile-menu__cta">Start a Project</a>
+  </div>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main">
+
+    <!-- PAGE HEADER -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">FAQ</span>
+        <h1>Frequently Asked Questions</h1>
+        <p class="page-hero__sub">Quick answers to common questions.</p>
+        <p class="page-hero__intro">If you cannot find your answer here, contact us and we will be happy to help.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" aria-label="Frequently asked questions">
+      <div class="container">
+
+        <div class="faq-tools">
+          <label class="sr-only" for="faqSearch">Search questions</label>
+          <input type="search" id="faqSearch" class="faq-search" placeholder="Search questions..." autocomplete="off">
+
+          <div class="faq-cats" role="group" aria-label="Filter by category">
+            <button type="button" class="faq-cat is-active" data-cat="all" aria-pressed="true">All</button>
+            <button type="button" class="faq-cat" data-cat="general" aria-pressed="false">General</button>
+            <button type="button" class="faq-cat" data-cat="services" aria-pressed="false">Services</button>
+            <button type="button" class="faq-cat" data-cat="pricing" aria-pressed="false">Pricing</button>
+            <button type="button" class="faq-cat" data-cat="support" aria-pressed="false">Support</button>
+          </div>
+        </div>
+
+        <div class="faq-list" id="faqList">
+
+          <div class="faq-item" data-cat="general">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a1" id="q1">What does Soft Claude do?</button>
+            <div class="faq-a" id="a1" hidden>
+              <p>We build custom websites, e-commerce stores, ERP systems, admin panels, business management systems, AI chatbot integrations and other software solutions, designed around each client's needs.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="general">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a2" id="q2">Where are you based, and do you work with international clients?</button>
+            <div class="faq-a" id="a2" hidden>
+              <p>We are based in Lahore, Pakistan, and we welcome clients from anywhere in the world. We communicate by email and WhatsApp.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="general">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a3" id="q3">Do I need technical knowledge to work with you?</button>
+            <div class="faq-a" id="a3" hidden>
+              <p>No. Tell us about your business and what you want to achieve, and we will explain the options in simple terms.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="services">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a4" id="q4">Can you work on my existing website?</button>
+            <div class="faq-a" id="a4" hidden>
+              <p>Yes. We can redesign it, add new features, fix bugs, improve security and performance, all without rebuilding it from scratch where that is not needed.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="services">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a5" id="q5">Do you help with domain and hosting?</button>
+            <div class="faq-a" id="a5" hidden>
+              <p>Yes. We can help you choose and set up a domain and hosting, and we deploy your website with HTTPS and test it before going live.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="services">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a6" id="q6">Can you build an admin panel so I can manage my own content?</button>
+            <div class="faq-a" id="a6" hidden>
+              <p>Yes. A custom admin panel lets you update content, products, images and more without editing any code.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="services">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a7" id="q7">Can you add an AI chatbot to my website?</button>
+            <div class="faq-a" id="a7" hidden>
+              <p>Yes. We can integrate a chatbot that answers visitor questions and collects inquiries, connected to your own system.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="pricing">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a8" id="q8">How much does a project cost?</button>
+            <div class="faq-a" id="a8" hidden>
+              <p>The cost depends on what you need. Share your requirements and budget with us, and we will suggest an approach that fits and give you a clear proposal.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="pricing">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a9" id="q9">Can you work within a limited budget?</button>
+            <div class="faq-a" id="a9" hidden>
+              <p>We design solutions around your requirements and your budget. If your budget is limited, we can start with the most important features and add more later.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="support">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a10" id="q10">Do you offer support after the project is launched?</button>
+            <div class="faq-a" id="a10" hidden>
+              <p>Yes. We offer maintenance, bug fixing, updates and improvements after launch, so your system keeps working well.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="support">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a11" id="q11">How is my information handled?</button>
+            <div class="faq-a" id="a11" hidden>
+              <p>We use the details you share only to respond to your inquiry and to understand your project, and we handle them with care.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="support">
+            <button type="button" class="faq-q" aria-expanded="false" aria-controls="a12" id="q12">How can I contact you?</button>
+            <div class="faq-a" id="a12" hidden>
+              <p>You can message us on WhatsApp at +92 310 1442332, email sdsoftclaude@gmail.com, or use the contact page.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="faq-empty" id="faqEmpty" hidden>
+          <p>No questions match your search. Try different words, or contact us directly.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STILL HAVE QUESTIONS -->
+    <section class="faq-help" aria-labelledby="help-title">
+      <div class="container">
+        <div class="faq-help__box">
+          <span class="eyebrow">Still have questions?</span>
+          <h2 id="help-title">We are happy to help.</h2>
+          <p>Send us a message and we will get back to you.</p>
+          <div class="faq-help__actions">
+            <a href="https://wa.me/923101442332" class="btn btn--primary">Chat on WhatsApp</a>
+            <a href="mailto:sdsoftclaude@gmail.com" class="btn btn--ghost">Send an Email</a>
+            <a href="contact.html" class="btn btn--ghost">Contact Page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-about">
+          <a href="index.html" class="logo" aria-label="Soft Claude home">
+            <span class="logo__mark" aria-hidden="true">{ }</span>
+            <span>Soft Claude</span>
+          </a>
+          <p>Custom websites, ERP systems, admin panels and AI solutions, built around your business.</p>
+
+          <div class="social" aria-label="Social media">
+            <a href="#" class="social__link" aria-label="YouTube" data-social="youtube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Instagram" data-social="instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Facebook" data-social="facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Google Business Profile" data-social="google">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4a6 6 0 0 1 5.6 3.9h-5.6a2 2 0 0 0-2 2V6z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav aria-label="Footer navigation">
+          <h2 class="footer-title">Explore</h2>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Footer services">
+          <h2 class="footer-title">Services</h2>
+          <ul class="footer-list">
+            <li><a href="services.html#websites">Websites</a></li>
+            <li><a href="services.html#software">ERP and Admin Panels</a></li>
+            <li><a href="services.html#intelligence">AI and Automation</a></li>
+            <li><a href="services.html#support">Maintenance and Security</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2 class="footer-title">Get in Touch</h2>
+          <div class="footer-contact">
+            <div>
+              <span>Phone / WhatsApp</span>
+              <a href="https://wa.me/923101442332">+92 310 1442332</a>
+            </div>
+            <div>
+              <span>Email</span>
+              <a href="mailto:sdsoftclaude@gmail.com">sdsoftclaude@gmail.com</a>
+            </div>
+            <div>
+              <span>Location</span>
+              <p style="margin:0;color:var(--c-ivory);font-size:0.95rem;">Lahore, Pakistan</p>
+            </div>
+          </div>
+
+          <div class="footer-signup">
+            <button class="btn-google" type="button" data-action="google-signup">
+              <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3a12 12 0 1 1-3.5-13.3l5.7-5.7A20 20 0 1 0 44 24c0-1.3-.1-2.6-.4-3.9z"/>
+                <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8A12 12 0 0 1 24 12c3.1 0 5.8 1.1 8 2.9l5.7-5.7A20 20 0 0 0 6.3 14.7z"/>
+                <path fill="#4CAF50" d="M24 44a20 20 0 0 0 13.5-5.2l-6.2-5.2A12 12 0 0 1 12.7 28.8l-6.5 5A20 20 0 0 0 24 44z"/>
+                <path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C40.8 35.6 44 30.2 44 24c0-1.3-.1-2.6-.4-3.9z"/>
+              </svg>
+              Sign up with Google
+            </button>
+            <small>Get project updates and offers by email. You can unsubscribe anytime.</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Soft Claude. All rights reserved.</span>
+        <span>Lahore, Pakistan</span>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/faq-page.js"></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>

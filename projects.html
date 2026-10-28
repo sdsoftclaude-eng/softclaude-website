@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Projects | Soft Claude</title>
+  <meta name="description" content="Explore the websites, ERP systems, admin panels and AI solutions built by Soft Claude, Lahore.">
+  <meta name="theme-color" content="#0A0E1A">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230A0E1A'/><text x='32' y='43' font-size='30' text-anchor='middle' fill='%232DD4BF' font-family='Georgia,serif' font-weight='700'>{ }</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+
+  <a href="#main" class="sr-only">Skip to content</a>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div class="loader" id="loader" role="status" aria-live="polite" aria-hidden="true">
+    <div class="loader__box">
+      <div class="loader__logo">
+        <span class="loader__mark" aria-hidden="true">{ }</span>
+        <span>Soft Claude</span>
+      </div>
+
+      <p class="loader__text">Please Wait...</p>
+      <div class="loader__bar" aria-hidden="true"></div>
+
+      <div class="loader__error">
+        <p>This is taking longer than expected. Please check your internet connection and try again.</p>
+        <div class="loader__actions">
+          <button type="button" class="loader__btn loader__btn--primary" id="loaderRetry">Retry</button>
+          <button type="button" class="loader__btn" id="loaderSkip">Continue anyway</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Soft Claude home">
+        <span class="logo__mark" aria-hidden="true">{ }</span>
+        <span>Soft Claude</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li><a href="index.html" class="main-nav__link">Home</a></li>
+          <li><a href="services.html" class="main-nav__link">Services</a></li>
+          <li><a href="projects.html" class="main-nav__link" aria-current="page">Projects</a></li>
+          <li><a href="clients.html" class="main-nav__link">Clients</a></li>
+          <li><a href="about.html" class="main-nav__link">About</a></li>
+          <li><a href="faq.html" class="main-nav__link">FAQ</a></li>
+          <li><a href="contact.html" class="main-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="btn btn--primary header-cta">Start a Project</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE MENU ===================== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="mobile-menu__link">Home</a>
+    <a href="services.html" class="mobile-menu__link">Services</a>
+    <a href="projects.html" class="mobile-menu__link" aria-current="page">Projects</a>
+    <a href="clients.html" class="mobile-menu__link">Clients</a>
+    <a href="about.html" class="mobile-menu__link">About</a>
+    <a href="faq.html" class="mobile-menu__link">FAQ</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+    <a href="contact.html" class="btn btn--primary mobile-menu__cta">Start a Project</a>
+  </div>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main">
+
+    <!-- PAGE HEADER -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Portfolio</span>
+        <h1>Our Work</h1>
+        <p class="page-hero__sub">Systems built to solve real business problems.</p>
+        <p class="page-hero__intro">These are examples of what we build. Demonstration projects are always clearly marked as demos, and real client projects will appear here as we publish them.</p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects-list" aria-label="Projects">
+      <div class="container">
+
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-filter="websites" aria-pressed="false">Websites</button>
+          <button type="button" class="filter-btn" data-filter="software" aria-pressed="false">Software</button>
+          <button type="button" class="filter-btn" data-filter="ai" aria-pressed="false">AI and Automation</button>
+          <button type="button" class="filter-btn" data-filter="demo" aria-pressed="false">Demos</button>
+        </div>
+
+        <div class="grid grid--2" id="projectGrid">
+
+          <article class="project-card" data-cat="software demo">
+            <div class="project-card__media">
+              <div class="project-card__art art--a" aria-hidden="true"></div>
+              <span class="badge-demo">DEMO</span>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__cat">ERP System</span>
+              <h3>Inventory and Sales Manager</h3>
+              <p>Stock tracking, orders and reports in one dashboard.</p>
+              <div class="tags">
+                <span>HTML</span>
+                <span>JavaScript</span>
+                <span>Supabase</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-cat="software demo">
+            <div class="project-card__media">
+              <div class="project-card__art art--b" aria-hidden="true"></div>
+              <span class="badge-demo">DEMO</span>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__cat">Admin Panel</span>
+              <h3>Content Management Panel</h3>
+              <p>Secure admin area to manage pages, media and users.</p>
+              <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Supabase</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-cat="ai demo">
+            <div class="project-card__media">
+              <div class="project-card__art art--c" aria-hidden="true"></div>
+              <span class="badge-demo">DEMO</span>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__cat">AI and Automation</span>
+              <h3>Smart Inquiry Assistant</h3>
+              <p>A chatbot that collects client requirements and sends a summary.</p>
+              <div class="tags">
+                <span>JavaScript</span>
+                <span>AI API</span>
+                <span>Python</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-cat="websites demo">
+            <div class="project-card__media">
+              <div class="project-card__art art--a" aria-hidden="true"></div>
+              <span class="badge-demo">DEMO</span>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__cat">Website</span>
+              <h3>Business Website Template</h3>
+              <p>A fast, responsive company website with a clean design and contact form.</p>
+              <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="projects-empty" id="projectsEmpty" hidden>
+          <p>No projects in this category yet. Check back soon.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="cta" aria-labelledby="want-title">
+      <div class="container">
+        <div class="cta__box">
+          <span class="eyebrow">Your Project</span>
+          <h2 id="want-title">Want something like this?</h2>
+          <p>Tell us what you need and we will design a solution around your goals and budget.</p>
+          <div class="cta__actions">
+            <a href="contact.html" class="btn btn--primary">Start a Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-about">
+          <a href="index.html" class="logo" aria-label="Soft Claude home">
+            <span class="logo__mark" aria-hidden="true">{ }</span>
+            <span>Soft Claude</span>
+          </a>
+          <p>Custom websites, ERP systems, admin panels and AI solutions, built around your business.</p>
+
+          <div class="social" aria-label="Social media">
+            <a href="#" class="social__link" aria-label="YouTube" data-social="youtube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Instagram" data-social="instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Facebook" data-social="facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Google Business Profile" data-social="google">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4a6 6 0 0 1 5.6 3.9h-5.6a2 2 0 0 0-2 2V6z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav aria-label="Footer navigation">
+          <h2 class="footer-title">Explore</h2>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Footer services">
+          <h2 class="footer-title">Services</h2>
+          <ul class="footer-list">
+            <li><a href="services.html#websites">Websites</a></li>
+            <li><a href="services.html#software">ERP and Admin Panels</a></li>
+            <li><a href="services.html#intelligence">AI and Automation</a></li>
+            <li><a href="services.html#support">Maintenance and Security</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2 class="footer-title">Get in Touch</h2>
+          <div class="footer-contact">
+            <div>
+              <span>Phone / WhatsApp</span>
+              <a href="https://wa.me/923101442332">+92 310 1442332</a>
+            </div>
+            <div>
+              <span>Email</span>
+              <a href="mailto:sdsoftclaude@gmail.com">sdsoftclaude@gmail.com</a>
+            </div>
+            <div>
+              <span>Location</span>
+              <p style="margin:0;color:var(--c-ivory);font-size:0.95rem;">Lahore, Pakistan</p>
+            </div>
+          </div>
+
+          <div class="footer-signup">
+            <button class="btn-google" type="button" data-action="google-signup">
+              <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3a12 12 0 1 1-3.5-13.3l5.7-5.7A20 20 0 1 0 44 24c0-1.3-.1-2.6-.4-3.9z"/>
+                <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8A12 12 0 0 1 24 12c3.1 0 5.8 1.1 8 2.9l5.7-5.7A20 20 0 0 0 6.3 14.7z"/>
+                <path fill="#4CAF50" d="M24 44a20 20 0 0 0 13.5-5.2l-6.2-5.2A12 12 0 0 1 12.7 28.8l-6.5 5A20 20 0 0 0 24 44z"/>
+                <path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C40.8 35.6 44 30.2 44 24c0-1.3-.1-2.6-.4-3.9z"/>
+              </svg>
+              Sign up with Google
+            </button>
+            <small>Get project updates and offers by email. You can unsubscribe anytime.</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Soft Claude. All rights reserved.</span>
+        <span>Lahore, Pakistan</span>
+      </div>
+    </div>
+  </footer>
+
+    <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/projects-page.js"></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>

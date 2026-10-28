@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Services | Soft Claude</title>
+  <meta name="description" content="Custom websites, ERP systems, admin panels, AI chatbots and software solutions from Soft Claude, Lahore.">
+  <meta name="theme-color" content="#0A0E1A">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230A0E1A'/><text x='32' y='43' font-size='30' text-anchor='middle' fill='%232DD4BF' font-family='Georgia,serif' font-weight='700'>{ }</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/services.css">
+</head>
+<body>
+
+  <a href="#main" class="sr-only">Skip to content</a>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div class="loader" id="loader" role="status" aria-live="polite" aria-hidden="true">
+    <div class="loader__box">
+      <div class="loader__logo">
+        <span class="loader__mark" aria-hidden="true">{ }</span>
+        <span>Soft Claude</span>
+      </div>
+
+      <p class="loader__text">Please Wait...</p>
+      <div class="loader__bar" aria-hidden="true"></div>
+
+      <div class="loader__error">
+        <p>This is taking longer than expected. Please check your internet connection and try again.</p>
+        <div class="loader__actions">
+          <button type="button" class="loader__btn loader__btn--primary" id="loaderRetry">Retry</button>
+          <button type="button" class="loader__btn" id="loaderSkip">Continue anyway</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Soft Claude home">
+        <span class="logo__mark" aria-hidden="true">{ }</span>
+        <span>Soft Claude</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li><a href="index.html" class="main-nav__link">Home</a></li>
+          <li><a href="services.html" class="main-nav__link" aria-current="page">Services</a></li>
+          <li><a href="projects.html" class="main-nav__link">Projects</a></li>
+          <li><a href="clients.html" class="main-nav__link">Clients</a></li>
+          <li><a href="about.html" class="main-nav__link">About</a></li>
+          <li><a href="faq.html" class="main-nav__link">FAQ</a></li>
+          <li><a href="contact.html" class="main-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="btn btn--primary header-cta">Start a Project</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE MENU ===================== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="mobile-menu__link">Home</a>
+    <a href="services.html" class="mobile-menu__link" aria-current="page">Services</a>
+    <a href="projects.html" class="mobile-menu__link">Projects</a>
+    <a href="clients.html" class="mobile-menu__link">Clients</a>
+    <a href="about.html" class="mobile-menu__link">About</a>
+    <a href="faq.html" class="mobile-menu__link">FAQ</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+    <a href="contact.html" class="btn btn--primary mobile-menu__cta">Start a Project</a>
+  </div>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main">
+
+    <!-- PAGE HEADER -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">What we do</span>
+        <h1>Our Services</h1>
+        <p class="page-hero__sub">Custom solutions for every business, from a simple website to complete software systems.</p>
+        <p class="page-hero__intro">At Soft Claude, we design each solution around your requirements, budget, and business goals. Whether you are starting fresh or need to improve an existing website, we will find the right approach for you.</p>
+      </div>
+    </section>
+
+    <!-- WEBSITES -->
+    <section class="svc-cat" id="websites" aria-labelledby="cat-websites">
+      <div class="container">
+        <div class="svc-cat__head">
+          <h2 class="svc-cat__label" id="cat-websites">Websites</h2>
+          <span class="svc-cat__line" aria-hidden="true"></span>
+        </div>
+        <div class="grid grid--3 svc-grid">
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></div>
+            <h3>Custom Website Development</h3>
+            <p>Modern, fast websites designed around your brand and goals.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 8H6"/></svg></div>
+            <h3>E-commerce Website Development</h3>
+            <p>Online stores with product management, secure checkout, and order tracking.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+            <h3>Website Redesign and Feature Integration</h3>
+            <p>Refresh an existing website with new design, added features, and better performance, without rebuilding it from scratch.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFTWARE AND SYSTEMS -->
+    <section class="svc-cat" id="software" aria-labelledby="cat-software">
+      <div class="container">
+        <div class="svc-cat__head">
+          <h2 class="svc-cat__label" id="cat-software">Software and Systems</h2>
+          <span class="svc-cat__line" aria-hidden="true"></span>
+        </div>
+        <div class="grid grid--3 svc-grid">
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M2 13l10 5 10-5"/></svg></div>
+            <h3>ERP System Development</h3>
+            <p>One connected system for sales, inventory, finance, and operations.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+            <h3>Custom Admin Panel Development</h3>
+            <p>Secure dashboards to manage your content, data, and users without touching code.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
+            <h3>Business Management Systems</h3>
+            <p>Tools that organize your daily business workflows in one place.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></div>
+            <h3>Custom Software Development</h3>
+            <p>Software built from the ground up for your specific business problem.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 7 5 5-5 5M12 18h8"/></svg></div>
+            <h3>Python-Based Software Solutions</h3>
+            <p>Backend tools, automation scripts, and data-driven applications in Python.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTELLIGENCE AND AUTOMATION -->
+    <section class="svc-cat" id="intelligence" aria-labelledby="cat-intelligence">
+      <div class="container">
+        <div class="svc-cat__head">
+          <h2 class="svc-cat__label" id="cat-intelligence">Intelligence and Automation</h2>
+          <span class="svc-cat__line" aria-hidden="true"></span>
+        </div>
+        <div class="grid grid--3 svc-grid">
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div>
+            <h3>AI Chatbot Integration</h3>
+            <p>Smart chatbots that answer customers, collect leads, and support your team.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+            <h3>Business Process Automation</h3>
+            <p>Remove repetitive manual tasks and save time across your operations.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+            <h3>Database Design and Integration</h3>
+            <p>Well-structured databases that connect cleanly with your website and apps.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT AND GROWTH -->
+    <section class="svc-cat" id="support" aria-labelledby="cat-support">
+      <div class="container">
+        <div class="svc-cat__head">
+          <h2 class="svc-cat__label" id="cat-support">Support and Growth</h2>
+          <span class="svc-cat__line" aria-hidden="true"></span>
+        </div>
+        <div class="grid grid--3 svc-grid">
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <h3>Website Maintenance and Bug Fixing</h3>
+            <p>Regular updates, performance checks, and quick fixes when something breaks.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>Website Security Improvements</h3>
+            <p>Stronger authentication, safe file uploads, and protection against common attacks.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></div>
+            <h3>Domain and Hosting Assistance</h3>
+            <p>Help choosing, buying, and setting up your domain and hosting.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.5-9A6 6 0 0 1 18 9.5 4 4 0 0 1 17.5 18H7z"/></svg></div>
+            <h3>Website Hosting and Deployment</h3>
+            <p>Safe, reliable deployment with HTTPS, environment setup, and go-live testing.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Our Process</span>
+          <h2 id="process-title">How We Work</h2>
+        </div>
+        <div class="grid grid--4">
+
+          <div class="why__item">
+            <span class="why__num">01</span>
+            <h3>Requirement</h3>
+            <p>We listen to your goals, collect the details, and understand your budget and timeline.</p>
+          </div>
+
+          <div class="why__item">
+            <span class="why__num">02</span>
+            <h3>Plan</h3>
+            <p>We define the features, the technology, and the steps, and share a clear proposal with you.</p>
+          </div>
+
+          <div class="why__item">
+            <span class="why__num">03</span>
+            <h3>Build</h3>
+            <p>We develop, test, and review each part with you, so you always know the progress.</p>
+          </div>
+
+          <div class="why__item">
+            <span class="why__num">04</span>
+            <h3>Support</h3>
+            <p>We launch the project and stay available for maintenance, updates, and improvements.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEED SOMETHING DIFFERENT -->
+    <section class="cta" aria-labelledby="custom-title">
+      <div class="container">
+        <div class="cta__box">
+          <span class="eyebrow">Custom Solutions</span>
+          <h2 id="custom-title">Need Something Different?</h2>
+          <p>Every business is unique. If you do not see the exact service you need, tell us about your project and we will design a solution that fits.</p>
+          <div class="cta__actions">
+            <a href="contact.html" class="btn btn--primary">Discuss Your Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-about">
+          <a href="index.html" class="logo" aria-label="Soft Claude home">
+            <span class="logo__mark" aria-hidden="true">{ }</span>
+            <span>Soft Claude</span>
+          </a>
+          <p>Custom websites, ERP systems, admin panels and AI solutions, built around your business.</p>
+
+          <div class="social" aria-label="Social media">
+            <a href="#" class="social__link" aria-label="YouTube" data-social="youtube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Instagram" data-social="instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Facebook" data-social="facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Google Business Profile" data-social="google">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4a6 6 0 0 1 5.6 3.9h-5.6a2 2 0 0 0-2 2V6z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav aria-label="Footer navigation">
+          <h2 class="footer-title">Explore</h2>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Footer services">
+          <h2 class="footer-title">Services</h2>
+          <ul class="footer-list">
+            <li><a href="services.html#websites">Websites</a></li>
+            <li><a href="services.html#software">ERP and Admin Panels</a></li>
+            <li><a href="services.html#intelligence">AI and Automation</a></li>
+            <li><a href="services.html#support">Maintenance and Security</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2 class="footer-title">Get in Touch</h2>
+          <div class="footer-contact">
+            <div>
+              <span>Phone / WhatsApp</span>
+              <a href="https://wa.me/923101442332">+92 310 1442332</a>
+            </div>
+            <div>
+              <span>Email</span>
+              <a href="mailto:sdsoftclaude@gmail.com">sdsoftclaude@gmail.com</a>
+            </div>
+            <div>
+              <span>Location</span>
+              <p style="margin:0;color:var(--c-ivory);font-size:0.95rem;">Lahore, Pakistan</p>
+            </div>
+          </div>
+
+          <div class="footer-signup">
+            <button class="btn-google" type="button" data-action="google-signup">
+              <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3a12 12 0 1 1-3.5-13.3l5.7-5.7A20 20 0 1 0 44 24c0-1.3-.1-2.6-.4-3.9z"/>
+                <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8A12 12 0 0 1 24 12c3.1 0 5.8 1.1 8 2.9l5.7-5.7A20 20 0 0 0 6.3 14.7z"/>
+                <path fill="#4CAF50" d="M24 44a20 20 0 0 0 13.5-5.2l-6.2-5.2A12 12 0 0 1 12.7 28.8l-6.5 5A20 20 0 0 0 24 44z"/>
+                <path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C40.8 35.6 44 30.2 44 24c0-1.3-.1-2.6-.4-3.9z"/>
+              </svg>
+              Sign up with Google
+            </button>
+            <small>Get project updates and offers by email. You can unsubscribe anytime.</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Soft Claude. All rights reserved.</span>
+        <span>Lahore, Pakistan</span>
+      </div>
+    </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/services-page.js"></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>
