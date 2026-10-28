@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Soft Claude — Clients page
+   Reuses .page-hero (services.css), .testimonials__empty and .cta (home.css)
+   ========================================================================== */
+
+.clients-block {
+  padding-block: var(--s-16);
+}
+
+.clients-block + .clients-block {
+  border-top: 1px solid var(--c-border);
+}
+
+/* ---------- Empty state (logos and case study) ---------- */
+.empty-card {
+  padding: var(--s-12) var(--s-8);
+  text-align: center;
+  background: var(--c-midnight-2);
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-lg);
+}
+
+.empty-card h3 {
+  margin-bottom: var(--s-3);
+}
+
+.empty-card p {
+  max-width: 48ch;
+  margin: 0 auto;
+}
+
+/* ---------- Logo grid (used later, when clients allow it) ---------- */
+/* ---------- Logo grid ---------- */
+.client-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--s-4);
+}
+
+.client-logo {
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+  padding: var(--s-6);
+  background: var(--c-midnight-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  color: var(--c-muted);
+  font-weight: 700;
+  transition: border-color var(--dur-base);
+}
+
+.client-logo:hover {
+  border-color: var(--c-teal);
+}
+
+.client-logo img {
+  max-height: 88px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.client-logo:hover img {
+  transform: scale(1.04);
+}
+
+/* ---------- Case study layout (used later) ---------- */
+.case-study {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-6);
+}
+
+.case-study__col {
+  padding: var(--s-6);
+  background: var(--c-midnight-2);
+  border: 1px solid var(--c-border);
+  border-top: 2px solid var(--c-teal);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 960px) {
+  .client-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .case-study {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-logo,
+  .client-logo img {
+    transition: none;
+  }
+}

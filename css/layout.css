@@ -1,0 +1,365 @@
+/* ==========================================================================
+   Soft Claude — Layout (Header, Mobile Menu, Footer)
+   Depends on: base.css (design tokens) and .btn from shared.css.
+   shared.css must load before this file so .header-cta can override .btn.
+   ========================================================================== */
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: rgba(10, 14, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-base) var(--ease-out);
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--c-border);
+}
+
+.header-inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: var(--s-4) var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-6);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.logo__mark {
+  color: var(--c-teal);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.main-nav__list {
+  display: flex;
+  gap: var(--s-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav__link {
+  position: relative;
+  color: var(--c-muted);
+  font-size: 0.95rem;
+  transition: color var(--dur-fast);
+  padding-block: var(--s-1);
+}
+
+.main-nav__link:hover {
+  color: var(--c-ivory);
+}
+
+.main-nav__link[aria-current="page"] {
+  color: var(--c-teal);
+}
+
+.main-nav__link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: var(--c-teal);
+  border-radius: 2px;
+}
+
+.header-cta {
+  padding: var(--s-3) var(--s-4);
+  font-size: 0.9rem;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  color: var(--c-ivory);
+  cursor: pointer;
+}
+
+.menu-toggle__bars,
+.menu-toggle__bars::before,
+.menu-toggle__bars::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  position: relative;
+  content: "";
+  transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-fast);
+}
+
+.menu-toggle__bars::before {
+  position: absolute;
+  top: -6px;
+  left: 0;
+}
+
+.menu-toggle__bars::after {
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars {
+  background: transparent;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------- Mobile menu ---------- */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s-6);
+  padding: var(--s-8);
+  background: var(--c-midnight);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dur-base) var(--ease-out), visibility var(--dur-base);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu__link {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--c-ivory);
+}
+
+.mobile-menu__link[aria-current="page"] {
+  color: var(--c-teal);
+}
+
+.mobile-menu__cta {
+  margin-top: var(--s-4);
+  align-self: flex-start;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  position: relative;
+  padding-top: var(--s-16);
+  padding-bottom: var(--s-8);
+  border-top: 1px solid var(--c-border);
+  background: linear-gradient(180deg, var(--c-midnight), #070A13);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: var(--s-12);
+}
+
+.footer-about p {
+  max-width: 28ch;
+  margin-top: var(--s-4);
+  font-size: 0.95rem;
+}
+
+.footer-title {
+  margin: 0 0 var(--s-4);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-teal);
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s-3);
+}
+
+.footer-list a,
+.footer-list li {
+  color: var(--c-muted);
+  font-size: 0.95rem;
+  transition: color var(--dur-fast);
+}
+
+.footer-list a:hover {
+  color: var(--c-ivory);
+}
+
+.footer-contact {
+  display: grid;
+  gap: var(--s-3);
+  font-size: 0.95rem;
+}
+
+.footer-contact a {
+  color: var(--c-ivory);
+  transition: color var(--dur-fast);
+}
+
+.footer-contact a:hover {
+  color: var(--c-teal);
+}
+
+.footer-contact span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--c-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+}
+
+.social__link {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  color: var(--c-muted);
+  transition: color var(--dur-fast), border-color var(--dur-fast), transform var(--dur-base) var(--ease-out);
+}
+
+.social__link:hover {
+  color: var(--c-teal);
+  border-color: var(--c-teal);
+  transform: translateY(-2px);
+}
+
+.social__link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.footer-signup {
+  margin-top: var(--s-6);
+  display: grid;
+  gap: var(--s-3);
+}
+
+.btn-google {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-radius: 10px;
+  border: 1px solid var(--c-border);
+  background: var(--c-midnight-2);
+  color: var(--c-ivory);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color var(--dur-fast), transform var(--dur-base) var(--ease-out);
+}
+
+.btn-google:hover {
+  border-color: var(--c-teal);
+  transform: translateY(-2px);
+}
+
+.footer-signup small {
+  color: var(--c-muted);
+  font-size: 0.8rem;
+}
+
+.footer-bottom {
+  margin-top: var(--s-12);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--c-border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-4);
+  font-size: 0.85rem;
+  color: var(--c-muted);
+}
+
+/* ---------- Responsive ---------- */
+
+/* Narrower desktops: tighten the header so seven links still fit */
+@media (max-width: 1100px) {
+  .header-inner {
+    gap: var(--s-4);
+  }
+
+  .main-nav__list {
+    gap: var(--s-6);
+  }
+}
+
+@media (max-width: 960px) {
+  .main-nav,
+  .site-header .header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-8);
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Add this at the very end of css/layout.css */
+
+/* Header social icons: desktop only */
+.header-social { display: none; align-items: center; gap: 8px; margin-left: auto; margin-right: 12px; }
+@media (min-width: 961px) { .header-social { display: flex; } }
+
+/* Contact page icons under the title */
+.page-social { display: flex; gap: 10px; margin-top: 20px; }

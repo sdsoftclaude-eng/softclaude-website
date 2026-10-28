@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Soft Claude — Projects page
+   Reuses .page-hero (services.css) and .project-card, .tags, .badge-demo (home.css)
+   ========================================================================== */
+
+.projects-list {
+  padding-bottom: var(--s-16);
+}
+
+/* ---------- Filter bar ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-bottom: var(--s-8);
+}
+
+.filter-btn {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--c-muted);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color var(--dur-fast), color var(--dur-fast), background var(--dur-fast);
+}
+
+.filter-btn:hover {
+  border-color: var(--c-teal);
+  color: var(--c-ivory);
+}
+
+.filter-btn.is-active {
+  background: var(--c-teal);
+  border-color: var(--c-teal);
+  color: var(--c-midnight);
+}
+
+/* A hidden card must really disappear (the card sets display:flex) */
+.project-card[hidden] {
+  display: none;
+}
+
+/* ---------- Empty state ---------- */
+.projects-empty {
+  padding: var(--s-12) var(--s-8);
+  text-align: center;
+  background: var(--c-midnight-2);
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-lg);
+}
+
+.projects-empty[hidden] {
+  display: none;
+}
+
+.projects-empty p {
+  margin: 0;
+}

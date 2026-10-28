@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Soft Claude — About page
+   Reuses .page-hero (services.css), .why__item and .cta (home.css)
+   ========================================================================== */
+
+/* ---------- Our story ---------- */
+.story {
+  padding-block: var(--s-16);
+}
+
+.story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--s-12);
+  align-items: start;
+}
+
+.story__text p {
+  font-size: 1.05rem;
+}
+
+.story__text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Vision and mission ---------- */
+.vm {
+  padding-bottom: var(--s-16);
+}
+
+.vm-card {
+  position: relative;
+  padding: var(--s-8);
+  background: var(--c-midnight-2);
+  border: 1px solid var(--c-border);
+  border-top: 2px solid var(--c-teal);
+  border-radius: var(--radius-lg);
+}
+
+.vm-card h3 {
+  margin-bottom: var(--s-3);
+}
+
+.vm-card p {
+  margin: 0;
+}
+
+/* ---------- Expertise ---------- */
+.expertise-block {
+  padding-block: var(--s-16);
+  border-top: 1px solid var(--c-border);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+.skills span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 0.7rem 1.2rem;
+  background: var(--c-midnight-2);
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  color: var(--c-ivory);
+  transition: border-color var(--dur-fast), transform var(--dur-base) var(--ease-out);
+}
+
+.skills span::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-teal);
+}
+
+.skills span:hover {
+  border-color: var(--c-teal);
+  transform: translateY(-2px);
+}
+
+/* ---------- Approach ---------- */
+.approach {
+  padding-block: var(--s-16);
+  border-top: 1px solid var(--c-border);
+}
+
+@media (max-width: 960px) {
+  .story__grid {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills span {
+    transition: none;
+  }
+  .skills span:hover {
+    transform: none;
+  }
+}

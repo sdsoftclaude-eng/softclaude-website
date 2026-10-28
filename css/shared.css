@@ -1,0 +1,511 @@
+/* ==========================================================================
+   Soft Claude — Shared components (used on more than one page)
+   Load order on every page: base.css, shared.css, layout.css, loader.css,
+   then the page's own CSS file.
+   ========================================================================== */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-fast), border-color var(--dur-fast);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--c-teal);
+  color: var(--c-midnight);
+}
+
+.btn--primary:hover {
+  background: #5EEAD4;
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--c-border);
+  color: var(--c-ivory);
+}
+
+.btn--ghost:hover {
+  border-color: var(--c-teal);
+}
+
+/* ---------- Section heading ---------- */
+.section-head {
+  max-width: 640px;
+  margin-bottom: var(--s-12);
+}
+
+.section-head p {
+  margin-top: var(--s-4);
+  font-size: 1.02rem;
+}
+
+/* ---------- Page header (every page except Home) ---------- */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 9rem 0 var(--s-12);
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.14), transparent 70%);
+  pointer-events: none;
+}
+
+.page-hero .container {
+  position: relative;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+}
+
+.page-hero__sub {
+  max-width: 36ch;
+  margin-bottom: var(--s-4);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  color: var(--c-ivory);
+}
+
+.page-hero__intro {
+  max-width: 60ch;
+  font-size: 1.02rem;
+}
+
+@media (max-width: 960px) {
+  .page-hero {
+    padding-top: 7rem;
+  }
+}
+
+/* ---------- Service card (Home, Services) ---------- */
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  padding: var(--s-8);
+  background: var(--c-midnight-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base), box-shadow var(--dur-base);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--c-teal);
+  box-shadow: 0 24px 60px -24px rgba(45, 212, 191, 0.35);
+}
+
+.service-card__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--c-teal-dim);
+  color: var(--c-teal);
+}
+
+.service-card__icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-card h3 {
+  margin-bottom: 0;
+}
+
+.service-card p {
+  font-size: 0.97rem;
+  margin: 0;
+}
+
+.service-card__link {
+  margin-top: auto;
+  padding-top: var(--s-4);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--c-teal);
+}
+
+.service-card__link span {
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.service-card:hover .service-card__link span {
+  transform: translateX(6px);
+}
+
+/* ---------- Project card (Home, Projects) ---------- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--c-midnight-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base), box-shadow var(--dur-base);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--c-teal);
+  box-shadow: 0 24px 60px -24px rgba(45, 212, 191, 0.35);
+}
+
+.project-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+/* Placeholder visual, replaced by real screenshots later */
+.project-card__art {
+  position: absolute;
+  inset: 0;
+  transition: transform 600ms var(--ease-out);
+}
+
+.project-card:hover .project-card__art {
+  transform: scale(1.06);
+}
+
+.art--a {
+  background:
+    linear-gradient(135deg, rgba(45, 212, 191, 0.35), rgba(10, 14, 26, 0.9)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 28px);
+}
+
+.art--b {
+  background:
+    linear-gradient(135deg, rgba(245, 181, 68, 0.3), rgba(10, 14, 26, 0.9)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 28px);
+}
+
+.art--c {
+  background:
+    linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(10, 14, 26, 0.9)),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 22px);
+}
+
+.badge-demo {
+  position: absolute;
+  top: var(--s-4);
+  left: var(--s-4);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: var(--c-amber);
+  color: var(--c-midnight);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-6);
+  flex: 1;
+}
+
+.project-card__cat {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-teal);
+}
+
+.project-card h3 {
+  margin: 0;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: auto;
+  padding-top: var(--s-3);
+}
+
+.tags span {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: var(--c-muted);
+}
+
+/* ---------- Numbered points (Home, Services, About) ---------- */
+.why__item {
+  position: relative;
+  padding: var(--s-8) var(--s-6);
+  border-top: 1px solid var(--c-border);
+  transition: border-color var(--dur-base);
+}
+
+.why__item:hover {
+  border-top-color: var(--c-teal);
+}
+
+.why__num {
+  display: block;
+  margin-bottom: var(--s-4);
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--c-teal);
+}
+
+.why__item h3 {
+  margin-bottom: var(--s-3);
+}
+
+.why__item p {
+  margin: 0;
+  font-size: 0.97rem;
+}
+
+/* ---------- Testimonials (Home, Clients) ---------- */
+.testimonials__empty {
+  position: relative;
+  max-width: 760px;
+  margin-inline: auto;
+  padding: var(--s-12) var(--s-8);
+  text-align: center;
+  background: var(--c-midnight-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+}
+
+.testimonials__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--s-6);
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--c-teal-dim);
+  color: var(--c-teal);
+}
+
+.testimonials__icon svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.testimonials__empty h3 {
+  margin-bottom: var(--s-3);
+}
+
+.testimonials__empty p {
+  max-width: 46ch;
+  margin-inline: auto;
+  margin-bottom: var(--s-8);
+}
+
+/* Quote card design, used later when real testimonials are added */
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  padding: var(--s-8);
+  background: var(--c-midnight-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+}
+
+.testimonial__quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--c-ivory);
+}
+
+.testimonial__author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  margin-top: auto;
+}
+
+.testimonial__name {
+  font-weight: 700;
+  color: var(--c-ivory);
+}
+
+.testimonial__role {
+  font-size: 0.85rem;
+  color: var(--c-muted);
+}
+
+/* ---------- Call to action (Home, Services, Projects, About, Clients) ---------- */
+.cta {
+  padding-block: var(--s-24);
+}
+
+.cta__box {
+  position: relative;
+  overflow: hidden;
+  padding: var(--s-16) var(--s-8);
+  text-align: center;
+  background: var(--c-midnight-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+}
+
+.cta__box::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.16), transparent 70%);
+  pointer-events: none;
+}
+
+.cta__box > * {
+  position: relative;
+}
+
+.cta__box h2 {
+  max-width: 18ch;
+  margin-inline: auto;
+}
+
+.cta__box p {
+  max-width: 46ch;
+  margin-inline: auto;
+  margin-bottom: var(--s-8);
+}
+
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-4);
+}
+
+@media (max-width: 640px) {
+  .cta__actions .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-card__link span,
+  .project-card,
+  .project-card__art,
+  .why__item {
+    transition: none;
+  }
+
+  .service-card:hover,
+  .project-card:hover,
+  .project-card:hover .project-card__art {
+    transform: none;
+  }
+}
+/* Real project screenshots (when a project has an uploaded image) */
+.project-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-out);
+}
+
+.project-card:hover .project-card__media img {
+  transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__media img {
+    transition: none;
+  }
+  .project-card:hover .project-card__media img {
+    transform: none;
+  }
+}
+
+/* Project card links (View demo / Source code) */
+.project-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--c-border);
+}
+
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--c-muted);
+  transition: border-color var(--dur-fast), color var(--dur-fast), background var(--dur-fast);
+}
+
+.project-card__link:first-child {
+  border-color: var(--c-teal);
+  color: var(--c-teal);
+}
+
+.project-card__link:hover {
+  background: var(--c-teal);
+  border-color: var(--c-teal);
+  color: var(--c-midnight);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__link {
+    transition: none;
+  }
+}

@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Soft Claude — Loading screen
+   Hidden by default. JavaScript shows it only if the page loads slowly.
+   ========================================================================== */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: var(--s-8);
+  background: var(--c-midnight);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dur-base) var(--ease-out), visibility var(--dur-base);
+}
+
+.loader.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader__box {
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.loader__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-6);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--c-ivory);
+}
+
+.loader__mark {
+  color: var(--c-teal);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.loader__text {
+  margin: 0 0 var(--s-4);
+  font-size: 0.95rem;
+  color: var(--c-muted);
+}
+
+.loader__bar {
+  position: relative;
+  width: 160px;
+  height: 2px;
+  margin-inline: auto;
+  overflow: hidden;
+  background: var(--c-border);
+  border-radius: 2px;
+}
+
+.loader__bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: var(--c-teal);
+  border-radius: 2px;
+  animation: loaderSlide 1.2s var(--ease-out) infinite;
+}
+
+@keyframes loaderSlide {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(250%); }
+}
+
+/* Error state: shown if the page takes too long */
+.loader__error {
+  display: none;
+}
+
+.loader.has-error .loader__text,
+.loader.has-error .loader__bar {
+  display: none;
+}
+
+.loader.has-error .loader__error {
+  display: block;
+}
+
+.loader__error p {
+  margin-bottom: var(--s-6);
+  font-size: 0.95rem;
+}
+
+.loader__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-3);
+}
+
+.loader__btn {
+  padding: 0.7rem 1.3rem;
+  border-radius: 10px;
+  border: 1px solid var(--c-border);
+  background: transparent;
+  color: var(--c-ivory);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color var(--dur-fast);
+}
+
+.loader__btn:hover {
+  border-color: var(--c-teal);
+}
+
+.loader__btn--primary {
+  background: var(--c-teal);
+  border-color: var(--c-teal);
+  color: var(--c-midnight);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader__bar::after {
+    animation: none;
+    width: 100%;
+  }
+}

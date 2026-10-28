@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Soft Claude — Services page only
+   Cards, page header and numbered points come from shared.css
+   ========================================================================== */
+
+/* ---------- Categories ---------- */
+.svc-cat {
+  padding-block: var(--s-12);
+}
+
+.svc-cat__head {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin-bottom: var(--s-8);
+}
+
+.svc-cat__label {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-teal);
+  white-space: nowrap;
+}
+
+.svc-cat__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--c-teal), transparent);
+  opacity: 0.5;
+}
+
+/* ---------- Spotlight effect on cards (desktop) ----------
+   The glow sits behind the card's text (isolation + z-index -1),
+   so it never tints the icon or the words. */
+.svc-grid .service-card {
+  isolation: isolate;
+}
+
+.svc-grid .service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(45, 212, 191, 0.12), transparent 60%);
+  opacity: 0;
+  transition: opacity var(--dur-base);
+  pointer-events: none;
+}
+
+.svc-grid .service-card:hover::before {
+  opacity: 1;
+}
+
+/* ---------- Process section ---------- */
+.process {
+  padding-block: var(--s-24);
+  border-top: 1px solid var(--c-border);
+}
