@@ -43,7 +43,7 @@
 .scc-dot{width:9px;height:9px;border-radius:50%;background:#22c55e}\
 .scc-x{margin-left:auto;background:none;border:0;color:#e6edf6;font-size:24px;cursor:pointer;line-height:1}\
 .scc-pb{height:3px;background:#1d2840}.scc-pb i{display:block;height:100%;width:0;background:" + CONFIG.teal + ";transition:width .3s}\
-.scc-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}\
+.scc-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:none;-ms-overflow-style:none}.scc-log::-webkit-scrollbar{display:none;width:0;height:0}\
 .scc-m{max-width:85%;padding:9px 13px;border-radius:14px;animation:scc-in .25s ease;word-wrap:break-word}\
 .scc-m.bot{background:#1a2540;align-self:flex-start;border-bottom-left-radius:4px}\
 .scc-m.me{background:" + CONFIG.teal + ";color:#04211e;align-self:flex-end;border-bottom-right-radius:4px}\
@@ -119,7 +119,7 @@
     foot.classList.add("on"); row.style.display = "flex";
     input.type = step.t === "text" ? "text" : step.t; input.value = ""; input.maxLength = step.k === "message" ? 2000 : 120;
     input.setAttribute("inputmode", step.t === "tel" ? "tel" : step.t === "email" ? "email" : "text");
-    input.setAttribute("autocomplete", step.k === "name" ? "name" : step.t === "email" ? "email" : step.t === "tel" ? "tel" : "off");
+    input.setAttribute("autocomplete", "off"); input.setAttribute("autocorrect", "off"); input.setAttribute("data-lpignore", "true"); input.setAttribute("data-form-type", "other");
     setTimeout(function () { input.focus(); }, 50);
   }
 
@@ -166,7 +166,7 @@
   function submit(go, card) {
     if (busy) return; busy = true; go.disabled = true; go.textContent = "Sending...";
     var payload = { source: "chatbot", name: data.name, email: (data.email || "").toLowerCase(), phone: data.phone || "", service: data.service || "", budget: data.budget || "", timeline: data.timeline || "", message: data.message };
-    fetch(CONFIG.submitUrl, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+    (window.SCVisitor ? SCVisitor.authHeaders() : Promise.resolve({})).then(function (h) { return fetch(CONFIG.submitUrl, { method: "POST", headers: Object.assign({ "Content-Type": "application/json" }, h), body: JSON.stringify(payload) }); })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { s: r.status, j: j }; }); })
       .then(function (x) {
         busy = false;
@@ -198,7 +198,8 @@
   }
   function close() { win.classList.remove("on"); btn.style.display = "flex"; btn.focus(); }
 
-  btn.onclick = open; tip.onclick = open; closeB.onclick = close;
+  function gated() { if (!window.SCVisitor) { alert("Chat abhi load nahi hua. Page refresh karein aur internet check karein."); return; } SCVisitor.requireLogin(open); }
+  btn.onclick = gated; tip.onclick = gated; closeB.onclick = close;
   send.onclick = submitText;
   input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); submitText(); } });
   skipB.onclick = function () { answer(""); };
